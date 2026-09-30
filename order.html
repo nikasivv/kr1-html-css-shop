@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Форма заявки на букет или растение: контактные данные, выбор товара и пожелания.">
+  <title>Оформление заявки — FloraShop</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Оформление заявки — FloraShop">
+  <meta property="og:description" content="Форма заявки на букет или растение: контактные данные, выбор товара и пожелания.">
+  <meta property="og:image" content="https://nikasivv.github.io/kr1-html-css-shop/images/preview.jpg">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">Flora<span class="site-header__logo-accent">Shop</span></a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="product.html">Товар</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link--active" href="order.html" aria-current="page">Заявка</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current" aria-current="page">Оформление заявки</span>
+    </nav>
+
+    <section class="section">
+      <h1 class="section__title">Оформление заявки</h1>
+      <p class="section__text">
+        Заполните форму, и флорист перезвонит вам в течение 15 минут
+        в рабочее время. Поля со звёздочкой обязательны.
+      </p>
+    </section>
+
+    <div class="order-layout">
+      <section class="order-layout__form" aria-labelledby="order-form-title">
+        <h2 class="visually-hidden" id="order-form-title">Форма заявки</h2>
+
+        <form class="order-form order-form--page" id="order-page-form" action="#" method="post" novalidate>
+        <div class="order-form__field">
+          <label class="order-form__label" for="page-name">Имя <span class="order-form__required" aria-hidden="true">*</span></label>
+          <input
+            class="order-form__input"
+            id="page-name"
+            name="name"
+            type="text"
+            placeholder="Введите ваше имя"
+            minlength="2"
+            autocomplete="given-name"
+            required
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="page-email">E-mail <span class="order-form__required" aria-hidden="true">*</span></label>
+          <input
+            class="order-form__input"
+            id="page-email"
+            name="email"
+            type="email"
+            placeholder="example@mail.ru"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="page-phone">Телефон <span class="order-form__required" aria-hidden="true">*</span></label>
+          <input
+            class="order-form__input"
+            id="page-phone"
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            placeholder="+7 (900) 000-00-00"
+            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+            aria-describedby="page-phone-hint"
+            required
+          >
+          <small class="order-form__hint" id="page-phone-hint">Формат: +7 (900) 000-00-00</small>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="page-product">Товар <span class="order-form__required" aria-hidden="true">*</span></label>
+          <select class="order-form__select" id="page-product" name="product" required>
+            <option value="">Выберите товар</option>
+            <option value="roses">Букет «Нежность»</option>
+            <option value="tulips">Букет «Весна»</option>
+            <option value="peony">Пионы в шляпной коробке</option>
+            <option value="daisies">Ромашки «Лето»</option>
+            <option value="orchid">Орхидея в кашпо</option>
+            <option value="succulents">Мини-сад из суккулентов</option>
+          </select>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="page-quantity">Количество <span class="order-form__required" aria-hidden="true">*</span></label>
+          <input
+            class="order-form__input"
+            id="page-quantity"
+            name="quantity"
+            type="number"
+            min="1"
+            max="10"
+            value="1"
+            required
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="page-date">Дата доставки</label>
+          <input
+            class="order-form__input"
+            id="page-date"
+            name="date"
+            type="date"
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="page-comment">Комментарий</label>
+          <textarea
+            class="order-form__textarea"
+            id="page-comment"
+            name="comment"
+            rows="4"
+            placeholder="Адрес и время доставки, текст для открытки"
+          ></textarea>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__checkbox-label" for="page-agreement">
+            <input
+              class="order-form__checkbox"
+              id="page-agreement"
+              name="agreement"
+              type="checkbox"
+              required
+            >
+            Я согласен на обработку персональных данных
+          </label>
+        </div>
+
+          <div class="order-form__actions">
+            <button class="button button--secondary" type="reset">Очистить</button>
+            <button class="button button--primary" type="submit">Отправить заявку</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="order-steps" aria-labelledby="order-steps-title">
+        <h2 class="order-steps__title" id="order-steps-title">Как проходит заказ</h2>
+        <ol class="order-steps__list">
+          <li class="order-steps__item">Вы оставляете заявку на сайте.</li>
+          <li class="order-steps__item">Флорист звонит и уточняет состав и время.</li>
+          <li class="order-steps__item">Присылаем фото готового букета.</li>
+          <li class="order-steps__item">Курьер доставляет, вы оплачиваете при получении.</li>
+        </ol>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
+      <div class="site-footer__column">
+        <p class="site-footer__title">FloraShop</p>
+        <p class="site-footer__text">Учебный интернет-магазин цветов и комнатных растений.</p>
+      </div>
+
+      <nav class="site-footer__column" aria-label="Навигация в подвале">
+        <p class="site-footer__title">Разделы</p>
+        <a class="site-footer__link" href="catalog.html">Каталог</a>
+        <a class="site-footer__link" href="order.html">Оформить заявку</a>
+        <a class="site-footer__link" href="contacts.html">Контакты</a>
+      </nav>
+
+      <div class="site-footer__column">
+        <p class="site-footer__title">Контакты</p>
+        <a class="site-footer__link" href="tel:+79000000000">+7 (900) 000-00-00</a>
+        <a class="site-footer__link" href="mailto:info@example.com">info@example.com</a>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__text">&copy; 2026 Учебный проект. Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </footer>
+
+  <a class="to-top" href="#top" aria-label="Наверх">↑</a>
+
+  <p class="success-message" id="success-message" role="status" hidden>
+    Спасибо! Заявка отправлена, мы свяжемся с вами в ближайшее время.
+  </p>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

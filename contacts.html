@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Контактная информация учебного интернет-магазина.">
-  <title>Контакты — Учебный интернет-магазин</title>
+  <meta name="description" content="Контакты цветочного магазина FloraShop: телефон, e-mail, адрес и ответы на частые вопросы.">
+  <title>Контакты — FloraShop</title>
   <link rel="stylesheet" href="css/style.css">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
+  <meta property="og:title" content="Контакты — FloraShop">
+  <meta property="og:description" content="Контакты цветочного магазина FloraShop: телефон, e-mail, адрес и ответы на частые вопросы.">
   <meta property="og:image" content="https://nikasivv.github.io/kr1-html-css-shop/images/preview.jpg">
 </head>
-<body>
+<body id="top">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">Flora<span class="site-header__logo-accent">Shop</span></a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
@@ -25,7 +27,13 @@
             <a class="site-nav__link" href="catalog.html">Каталог</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="contacts.html">Контакты</a>
+            <a class="site-nav__link" href="product.html">Товар</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="order.html">Заявка</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link--active" href="contacts.html" aria-current="page">Контакты</a>
           </li>
           <li class="site-nav__item">
             <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
@@ -33,45 +41,94 @@
           <li class="site-nav__item">
             <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
           </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
-          </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main class="page" id="main">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
-      <span class="breadcrumbs__current">Контакты</span>
+      <span class="breadcrumbs__current" aria-current="page">Контакты</span>
     </nav>
 
     <section class="section">
-      <h1>Контакты</h1>
-      <p>
-        Здесь размещается контактная информация учебного интернет-магазина.
-      </p>
+      <h1 class="section__title">Контакты</h1>
+      <p class="section__text">Свяжитесь с нами удобным способом — поможем подобрать букет и ответим на вопросы о доставке.</p>
 
-      <ul>
-        <li>Телефон: +7 (900) 000-00-00</li>
-        <li>E-mail: info@example.com</li>
-        <li>Адрес: г. Москва, учебный проект</li>
+      <ul class="contacts-list">
+        <li class="contacts-list__item">
+          <span class="contacts-list__label">Телефон</span>
+          <a class="contacts-list__value" href="tel:+79000000000">+7 (900) 000-00-00</a>
+        </li>
+        <li class="contacts-list__item">
+          <span class="contacts-list__label">E-mail</span>
+          <a class="contacts-list__value" href="mailto:info@example.com">info@example.com</a>
+        </li>
+        <li class="contacts-list__item">
+          <span class="contacts-list__label">Адрес</span>
+          <span class="contacts-list__value">г. Москва, учебный проект</span>
+        </li>
+        <li class="contacts-list__item">
+          <span class="contacts-list__label">Режим работы</span>
+          <span class="contacts-list__value">Ежедневно с 8:00 до 22:00</span>
+        </li>
       </ul>
     </section>
 
     <section class="section" id="feedback">
-      <h2>Обратная связь</h2>
-      <p>
-        Для отправки заявки используйте форму в модальном окне на главной странице.
-      </p>
-      <a class="button button--primary" href="index.html#contacts">Перейти к форме</a>
+      <h2 class="section__title">Обратная связь</h2>
+      <p class="section__text">Чтобы заказать товар или задать вопрос, заполните форму заявки.</p>
+      <a class="button button--primary" href="order.html">Перейти к форме заявки</a>
+    </section>
+
+    <section class="section" id="faq">
+      <h2 class="section__title">Частые вопросы</h2>
+
+      <div class="faq">
+        <details class="faq__item">
+          <summary class="faq__question">Сколько стоит доставка?</summary>
+          <p class="faq__answer">Доставка бесплатная при заказе от 3 000 ₽, в остальных случаях — 290 ₽ по городу.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">Как продлить жизнь букета?</summary>
+          <p class="faq__answer">Подрезайте стебли под углом, меняйте воду раз в день и добавляйте подкормку из комплекта.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">Можно ли заменить цветы в букете?</summary>
+          <p class="faq__answer">Да, флорист подберёт замену по цвету и стоимости и согласует её с вами.</p>
+        </details>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
+      <div class="site-footer__column">
+        <p class="site-footer__title">FloraShop</p>
+        <p class="site-footer__text">Учебный интернет-магазин цветов и комнатных растений.</p>
+      </div>
+
+      <nav class="site-footer__column" aria-label="Навигация в подвале">
+        <p class="site-footer__title">Разделы</p>
+        <a class="site-footer__link" href="catalog.html">Каталог</a>
+        <a class="site-footer__link" href="order.html">Оформить заявку</a>
+        <a class="site-footer__link" href="contacts.html">Контакты</a>
+      </nav>
+
+      <div class="site-footer__column">
+        <p class="site-footer__title">Контакты</p>
+        <a class="site-footer__link" href="tel:+79000000000">+7 (900) 000-00-00</a>
+        <a class="site-footer__link" href="mailto:info@example.com">info@example.com</a>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__text">&copy; 2026 Учебный проект. Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
   </footer>
+
+  <a class="to-top" href="#top" aria-label="Наверх">↑</a>
+
 </body>
 </html>
