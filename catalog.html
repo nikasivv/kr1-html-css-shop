@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Каталог товаров учебного интернет-магазина.">
-  <title>Каталог товаров — Учебный интернет-магазин</title>
+  <meta name="description" content="Каталог букетов, композиций и комнатных растений: категории, фильтры и цены.">
+  <title>Каталог товаров — FloraShop</title>
   <link rel="stylesheet" href="css/style.css">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
+  <meta property="og:title" content="Каталог товаров — FloraShop">
+  <meta property="og:description" content="Каталог букетов, композиций и комнатных растений: категории, фильтры и цены.">
   <meta property="og:image" content="https://nikasivv.github.io/kr1-html-css-shop/images/preview.jpg">
 </head>
-<body>
+<body id="top">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">Flora<span class="site-header__logo-accent">Shop</span></a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
@@ -22,7 +24,13 @@
             <a class="site-nav__link" href="index.html">Главная</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a>
+            <a class="site-nav__link site-nav__link--active" href="catalog.html" aria-current="page">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="product.html">Товар</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="order.html">Заявка</a>
           </li>
           <li class="site-nav__item">
             <a class="site-nav__link" href="contacts.html">Контакты</a>
@@ -33,99 +41,190 @@
           <li class="site-nav__item">
             <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
           </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
-          </li>
         </ul>
       </nav>
     </div>
   </header>
 
-    <main>
-      <nav class="breadcrumbs" aria-label="Хлебные крошки">
-        <a class="breadcrumbs__link" href="index.html">Главная</a>
-        <span class="breadcrumbs__current">Каталог</span>
+  <main class="page" id="main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current" aria-current="page">Каталог</span>
+    </nav>
+
+    <section class="section">
+      <h1 class="section__title">Каталог товаров</h1>
+      <p class="section__text">
+        Букеты, композиции и комнатные растения. Выберите категорию
+        или откройте карточку букета, чтобы посмотреть состав.
+      </p>
+
+      <ul class="categories" aria-label="Категории">
+        <li class="categories__item"><a class="categories__link categories__link--active" href="catalog.html" aria-current="page">Все товары</a></li>
+        <li class="categories__item"><a class="categories__link" href="#products">Букеты</a></li>
+        <li class="categories__item"><a class="categories__link" href="#products">Композиции</a></li>
+        <li class="categories__item"><a class="categories__link" href="#products">Полевые цветы</a></li>
+        <li class="categories__item"><a class="categories__link" href="#products">Комнатные растения</a></li>
+      </ul>
+    </section>
+
+    <section class="catalog-layout">
+      <aside class="catalog-filters" aria-labelledby="filters-title">
+        <h2 class="catalog-filters__title" id="filters-title">Фильтры</h2>
+
+        <form class="catalog-filters__form" action="#" method="get">
+          <fieldset class="catalog-filters__group">
+            <legend class="catalog-filters__legend">Категория</legend>
+
+            <label class="catalog-filters__option">
+              <input class="catalog-filters__checkbox" type="checkbox" name="category" value="bouquets">
+              Букеты
+            </label>
+            <label class="catalog-filters__option">
+              <input class="catalog-filters__checkbox" type="checkbox" name="category" value="compositions">
+              Композиции
+            </label>
+            <label class="catalog-filters__option">
+              <input class="catalog-filters__checkbox" type="checkbox" name="category" value="field">
+              Полевые цветы
+            </label>
+            <label class="catalog-filters__option">
+              <input class="catalog-filters__checkbox" type="checkbox" name="category" value="plants">
+              Растения
+            </label>
+          </fieldset>
+
+          <fieldset class="catalog-filters__group">
+            <legend class="catalog-filters__legend">Цена, ₽</legend>
+
+            <label class="catalog-filters__label" for="price-from">От</label>
+            <input class="catalog-filters__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
+
+            <label class="catalog-filters__label" for="price-to">До</label>
+            <input class="catalog-filters__input" id="price-to" name="price-to" type="number" min="0" placeholder="5000">
+          </fieldset>
+
+          <div class="catalog-filters__actions">
+            <button class="button button--primary" type="submit">Применить</button>
+            <button class="button button--secondary" type="reset">Сбросить</button>
+          </div>
+        </form>
+      </aside>
+
+      <section class="catalog-products" id="products" aria-labelledby="products-title">
+        <div class="section__header">
+          <h2 class="section__title section__title--inline" id="products-title">Список товаров</h2>
+          <p class="catalog-products__count">Найдено: 6 товаров</p>
+        </div>
+
+        <div class="products-grid">
+        <article class="product-card product-card--featured">
+          <span class="product-card__badge product-card__badge--hit">Хит</span>
+          <img class="product-card__image" src="images/roses.svg" alt="Букет «Нежность»" width="400" height="300" loading="lazy">
+          <p class="product-card__category">Букеты</p>
+          <h3 class="product-card__title">Букет «Нежность»</h3>
+          <p class="product-card__description">15 розовых роз в крафтовой упаковке с атласной лентой.</p>
+          <p class="product-card__price">3 490 ₽</p>
+          <div class="product-card__actions">
+            <a class="button button--secondary button--small" href="product.html">Подробнее</a>
+            <a class="button button--primary button--small" href="order.html">В заявку</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
+          <img class="product-card__image" src="images/tulips.svg" alt="Букет «Весна»" width="400" height="300" loading="lazy">
+          <p class="product-card__category">Букеты</p>
+          <h3 class="product-card__title">Букет «Весна»</h3>
+          <p class="product-card__description">25 разноцветных тюльпанов — яркий подарок к любому празднику.</p>
+          <p class="product-card__price">2 490 ₽</p>
+          <div class="product-card__actions">
+            <a class="button button--secondary button--small" href="product.html">Подробнее</a>
+            <a class="button button--primary button--small" href="order.html">В заявку</a>
+          </div>
+        </article>
+
+        <article class="product-card product-card--discount">
+          <span class="product-card__badge product-card__badge--sale">Скидка</span>
+          <img class="product-card__image" src="images/peony.svg" alt="Пионы в шляпной коробке" width="400" height="300" loading="lazy">
+          <p class="product-card__category">Композиции</p>
+          <h3 class="product-card__title">Пионы в шляпной коробке</h3>
+          <p class="product-card__description">Пышные пионы и эвкалипт в круглой коробке, стоят без воды.</p>
+          <p class="product-card__price">3 990 ₽ <s class="product-card__old-price">4 990 ₽</s></p>
+          <div class="product-card__actions">
+            <a class="button button--secondary button--small" href="product.html">Подробнее</a>
+            <a class="button button--primary button--small" href="order.html">В заявку</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img class="product-card__image" src="images/daisies.svg" alt="Ромашки «Лето»" width="400" height="300" loading="lazy">
+          <p class="product-card__category">Полевые цветы</p>
+          <h3 class="product-card__title">Ромашки «Лето»</h3>
+          <p class="product-card__description">Лёгкий букет полевых ромашек с зеленью.</p>
+          <p class="product-card__price">1 490 ₽</p>
+          <div class="product-card__actions">
+            <a class="button button--secondary button--small" href="product.html">Подробнее</a>
+            <a class="button button--primary button--small" href="order.html">В заявку</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
+          <img class="product-card__image" src="images/orchid.svg" alt="Орхидея в кашпо" width="400" height="300" loading="lazy">
+          <p class="product-card__category">Комнатные растения</p>
+          <h3 class="product-card__title">Орхидея в кашпо</h3>
+          <p class="product-card__description">Цветущая фаленопсис в керамическом кашпо, цветёт до 3 месяцев.</p>
+          <p class="product-card__price">2 990 ₽</p>
+          <div class="product-card__actions">
+            <a class="button button--secondary button--small" href="product.html">Подробнее</a>
+            <a class="button button--primary button--small" href="order.html">В заявку</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img class="product-card__image" src="images/succulents.svg" alt="Мини-сад из суккулентов" width="400" height="300" loading="lazy">
+          <p class="product-card__category">Комнатные растения</p>
+          <h3 class="product-card__title">Мини-сад из суккулентов</h3>
+          <p class="product-card__description">Три суккулента в деревянном ящике, почти не требуют ухода.</p>
+          <p class="product-card__price">1 790 ₽</p>
+          <div class="product-card__actions">
+            <a class="button button--secondary button--small" href="product.html">Подробнее</a>
+            <a class="button button--primary button--small" href="order.html">В заявку</a>
+          </div>
+        </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
+      <div class="site-footer__column">
+        <p class="site-footer__title">FloraShop</p>
+        <p class="site-footer__text">Учебный интернет-магазин цветов и комнатных растений.</p>
+      </div>
+
+      <nav class="site-footer__column" aria-label="Навигация в подвале">
+        <p class="site-footer__title">Разделы</p>
+        <a class="site-footer__link" href="catalog.html">Каталог</a>
+        <a class="site-footer__link" href="order.html">Оформить заявку</a>
+        <a class="site-footer__link" href="contacts.html">Контакты</a>
       </nav>
 
-      <section class="section">
-        <h1>Каталог товаров</h1>
-        <p>
-          На этой странице представлен учебный каталог товаров.
-          В дальнейшем здесь будут добавлены фильтры, сортировка и более
-          подробные карточки.
-        </p>
-      </section>
+      <div class="site-footer__column">
+        <p class="site-footer__title">Контакты</p>
+        <a class="site-footer__link" href="tel:+79000000000">+7 (900) 000-00-00</a>
+        <a class="site-footer__link" href="mailto:info@example.com">info@example.com</a>
+      </div>
+    </div>
 
-      <section class="catalog-layout">
-        <aside class="catalog-filters">
-          <h2>Фильтры</h2>
-
-          <form class="filters-form" action="#" method="get">
-            <fieldset>
-              <legend>Категория</legend>
-
-              <label>
-                <input type="checkbox" name="category" value="all">
-                Все товары
-              </label>
-
-              <label>
-                <input type="checkbox" name="category" value="popular">
-                Популярные
-              </label>
-
-              <label>
-                <input type="checkbox" name="category" value="new">
-                Новинки
-              </label>
-            </fieldset>
-
-            <fieldset>
-              <legend>Цена</legend>
-
-              <label for="price-from">От</label>
-              <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
-
-              <label for="price-to">До</label>
-              <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
-            </fieldset>
-
-            <button class="button button--primary" type="submit">Применить</button>
-          </form>
-        </aside>
-
-        <section class="catalog-products">
-          <h2>Список товаров</h2>
-
-          <div class="products-grid">
-            <article class="product-card product-card--featured">
-              <h3 class="product-card__title">Товар 1</h3>
-              <p class="product-card__description">Краткое описание учебного товара.</p>
-              <p class="product-card__price">Цена: 1000 руб.</p>
-              <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
-            </article>
-
-            <article class="product-card">
-              <h3 class="product-card__title">Товар 2</h3>
-              <p class="product-card__description">Краткое описание учебного товара.</p>
-              <p class="product-card__price">Цена: 1500 руб.</p>
-              <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
-            </article>
-
-            <article class="product-card">
-              <h3 class="product-card__title">Товар 3</h3>
-              <p class="product-card__description">Краткое описание учебного товара.</p>
-              <p class="product-card__price">Цена: 2000 руб.</p>
-              <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
-            </article>
-          </div>
-        </section>
-      </section>
-    </main>
-
-  <footer>
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    <div class="site-footer__bottom">
+      <p class="site-footer__text">&copy; 2026 Учебный проект. Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
   </footer>
+
+  <a class="to-top" href="#top" aria-label="Наверх">↑</a>
+
 </body>
 </html>

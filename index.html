@@ -3,27 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Главная страница учебного интернет-магазина.">
-  <title>Главная — Учебный интернет-магазин</title>
+  <meta name="description" content="Учебный цветочный интернет-магазин: популярные букеты, преимущества и оформление заявки.">
+  <title>Главная — FloraShop</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
+  <meta property="og:title" content="Главная — FloraShop">
+  <meta property="og:description" content="Учебный цветочный интернет-магазин: популярные букеты, преимущества и оформление заявки.">
   <meta property="og:image" content="https://nikasivv.github.io/kr1-html-css-shop/images/preview.jpg">
 </head>
-<body>
+<body id="top">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">Flora<span class="site-header__logo-accent">Shop</span></a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="index.html">Главная</a>
+            <a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a>
           </li>
           <li class="site-nav__item">
             <a class="site-nav__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="product.html">Товар</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="order.html">Заявка</a>
           </li>
           <li class="site-nav__item">
             <a class="site-nav__link" href="contacts.html">Контакты</a>
@@ -34,190 +41,276 @@
           <li class="site-nav__item">
             <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
           </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
-          </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- Основное содержимое страницы -->
+  <main class="page" id="main">
     <section class="hero">
-      <h1>Учебный интернет-магазин</h1>
-      <p>
-        Это стартовая страница учебного frontend-проекта.
-        В дальнейшем на её основе будет разработан многостраничный сайт
-        интернет-магазина или каталога услуг.
-      </p>
-      <a class="button button--primary" href="#popular">Перейти к товарам</a>
+      <div class="hero__content">
+        <h1 class="hero__title">Свежие цветы с доставкой за 2 часа</h1>
+        <p class="hero__text">
+          Учебный цветочный магазин FloraShop: собираем букеты из свежих цветов,
+          подбираем композиции к празднику и бережно доставляем по городу.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="catalog.html">Перейти в каталог</a>
+          <a class="button button--secondary" href="#popular">Популярные товары</a>
+        </div>
+      </div>
+      <img class="hero__image" src="images/roses.svg" alt="Букет из розовых роз" width="400" height="300">
     </section>
 
     <section class="section" id="advantages">
-      <h2>Преимущества проекта</h2>
+      <h2 class="section__title">Преимущества магазина</h2>
 
-      <ul class="advantages-list">
-        <li>понятная HTML-структура;</li>
-        <li>семантические блоки страницы;</li>
-        <li>подключение внешнего CSS-файла;</li>
-        <li>подготовка к разработке многостраничного сайта.</li>
+      <ul class="advantages">
+        <li class="advantages__item">
+          <h3 class="advantages__title">Только свежие цветы</h3>
+          <p class="advantages__text">Получаем поставки каждое утро и не храним цветы дольше 2 дней.</p>
+        </li>
+        <li class="advantages__item">
+          <h3 class="advantages__title">Доставка за 2 часа</h3>
+          <p class="advantages__text">Привезём букет в термоупаковке точно к нужному времени.</p>
+        </li>
+        <li class="advantages__item">
+          <h3 class="advantages__title">Фото перед отправкой</h3>
+          <p class="advantages__text">Пришлём фото готового букета до доставки.</p>
+        </li>
+        <li class="advantages__item">
+          <h3 class="advantages__title">Открытка в подарок</h3>
+          <p class="advantages__text">Подпишем открытку вашими словами бесплатно.</p>
+        </li>
       </ul>
     </section>
 
     <section class="section" id="popular">
-      <h2>Популярные товары</h2>
+      <div class="section__header">
+        <h2 class="section__title section__title--inline">Популярные товары</h2>
+        <a class="section__link" href="catalog.html">Весь каталог →</a>
+      </div>
 
       <div class="products-grid">
         <article class="product-card product-card--featured">
-          <h3 class="product-card__title">Товар 1</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1000 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 1">
-            Заказать
-          </button>
+          <span class="product-card__badge product-card__badge--hit">Хит</span>
+          <img class="product-card__image" src="images/roses.svg" alt="Букет «Нежность»" width="400" height="300" loading="lazy">
+          <p class="product-card__category">Букеты</p>
+          <h3 class="product-card__title">Букет «Нежность»</h3>
+          <p class="product-card__description">15 розовых роз в крафтовой упаковке с атласной лентой.</p>
+          <p class="product-card__price">3 490 ₽</p>
+          <div class="product-card__actions">
+            <a class="button button--secondary button--small" href="product.html">Подробнее</a>
+            <button class="button button--primary button--small product-card__button" type="button" data-product="Букет «Нежность»">
+              Заказать
+            </button>
+          </div>
         </article>
 
         <article class="product-card">
-          <h3 class="product-card__title">Товар 2</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1500 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 2">
-            Заказать
-          </button>
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
+          <img class="product-card__image" src="images/tulips.svg" alt="Букет «Весна»" width="400" height="300" loading="lazy">
+          <p class="product-card__category">Букеты</p>
+          <h3 class="product-card__title">Букет «Весна»</h3>
+          <p class="product-card__description">25 разноцветных тюльпанов — яркий подарок к любому празднику.</p>
+          <p class="product-card__price">2 490 ₽</p>
+          <div class="product-card__actions">
+            <a class="button button--secondary button--small" href="product.html">Подробнее</a>
+            <button class="button button--primary button--small product-card__button" type="button" data-product="Букет «Весна»">
+              Заказать
+            </button>
+          </div>
         </article>
 
-        <article class="product-card">
-          <h3 class="product-card__title">Товар 3</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 2000 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 3">
-            Заказать
-          </button>
+        <article class="product-card product-card--discount">
+          <span class="product-card__badge product-card__badge--sale">Скидка</span>
+          <img class="product-card__image" src="images/peony.svg" alt="Пионы в шляпной коробке" width="400" height="300" loading="lazy">
+          <p class="product-card__category">Композиции</p>
+          <h3 class="product-card__title">Пионы в шляпной коробке</h3>
+          <p class="product-card__description">Пышные пионы и эвкалипт в круглой коробке, стоят без воды.</p>
+          <p class="product-card__price">3 990 ₽ <s class="product-card__old-price">4 990 ₽</s></p>
+          <div class="product-card__actions">
+            <a class="button button--secondary button--small" href="product.html">Подробнее</a>
+            <button class="button button--primary button--small product-card__button" type="button" data-product="Пионы в шляпной коробке">
+              Заказать
+            </button>
+          </div>
         </article>
       </div>
     </section>
 
-    <aside class="aside-info">
-      <h2>Информация для студентов</h2>
-      <p>
-        На следующих практических занятиях этот проект будет расширяться:
-        появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
-        БЭМ-структура и адаптивная версия сайта.
-      </p>
+    <section class="section" id="reviews">
+      <h2 class="section__title">Отзывы покупателей</h2>
+
+      <div class="reviews">
+        <article class="review">
+          <p class="review__rating"><span aria-hidden="true">★★★★★</span><span class="visually-hidden">Оценка 5 из 5</span></p>
+          <p class="review__text">Заказала букет маме на день рождения — привезли вовремя, цветы простояли почти две недели.</p>
+          <p class="review__author">Анна, Москва</p>
+        </article>
+        <article class="review">
+          <p class="review__rating"><span aria-hidden="true">★★★★★</span><span class="visually-hidden">Оценка 5 из 5</span></p>
+          <p class="review__text">Взял пионы в коробке по акции, жена в восторге. Перед доставкой прислали фото.</p>
+          <p class="review__author">Игорь, Казань</p>
+        </article>
+        <article class="review">
+          <p class="review__rating"><span aria-hidden="true">★★★★☆</span><span class="visually-hidden">Оценка 4 из 5</span></p>
+          <p class="review__text">Удобная форма заявки, флорист перезвонил через 10 минут и помог выбрать цвета.</p>
+          <p class="review__author">Мария, Санкт-Петербург</p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="promo">
+      <h2 class="promo__title">Скидка 20% на пионы в шляпной коробке</h2>
+      <p class="promo__text">Акция действует до конца сезона пионов при оформлении заявки на сайте.</p>
+      <a class="button button--primary" href="order.html">Оформить заявку</a>
     </aside>
   </main>
 
-  <footer id="contacts">
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
+      <div class="site-footer__column">
+        <p class="site-footer__title">FloraShop</p>
+        <p class="site-footer__text">Учебный интернет-магазин цветов и комнатных растений.</p>
+      </div>
+
+      <nav class="site-footer__column" aria-label="Навигация в подвале">
+        <p class="site-footer__title">Разделы</p>
+        <a class="site-footer__link" href="catalog.html">Каталог</a>
+        <a class="site-footer__link" href="order.html">Оформить заявку</a>
+        <a class="site-footer__link" href="contacts.html">Контакты</a>
+      </nav>
+
+      <div class="site-footer__column">
+        <p class="site-footer__title">Контакты</p>
+        <a class="site-footer__link" href="tel:+79000000000">+7 (900) 000-00-00</a>
+        <a class="site-footer__link" href="mailto:info@example.com">info@example.com</a>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__text">&copy; 2026 Учебный проект. Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
   </footer>
 
+  <a class="to-top" href="#top" aria-label="Наверх">↑</a>
+
   <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
-
-    <form class="order-form" id="order-form" action="#" method="post" novalidate>
-      <input id="selected-product" name="selected-product" type="hidden">
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-name">Имя</label>
-        <input
-          class="order-form__input"
-          id="order-name"
-          name="name"
-          type="text"
-          placeholder="Введите ваше имя"
-          minlength="2"
-          autocomplete="given-name"
-          required
-        >
+    <div class="order-dialog__content">
+      <div class="order-dialog__header">
+        <h2 class="order-dialog__title" id="order-dialog-title">Быстрая заявка</h2>
+        <button class="order-dialog__close" type="button" id="close-order-dialog" aria-label="Закрыть окно">×</button>
       </div>
 
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-email">E-mail</label>
-        <input
-          class="order-form__input"
-          id="order-email"
-          name="email"
-          type="email"
-          placeholder="example@mail.ru"
-          autocomplete="email"
-          required
-        >
-      </div>
+      <form class="order-form" id="order-form" action="#" method="post" novalidate>
+        <input id="selected-product" name="selected-product" type="hidden">
+        <p class="order-form__selected">Товар: <strong id="selected-product-name">не выбран</strong></p>
 
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-phone">Телефон</label>
-        <input
-          class="order-form__input"
-          id="order-phone"
-          name="phone"
-          type="tel"
-          inputmode="tel"
-          placeholder="+7 (900) 000-00-00"
-          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-          required
-        >
-        <small>Формат: +7 (900) 000-00-00</small>
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-date">Дата связи</label>
-        <input
-          class="order-form__input"
-          id="order-date"
-          name="date"
-          type="date"
-        >
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-topic">Тема заявки</label>
-        <select class="order-form__select" id="order-topic" name="topic" required>
-          <option value="">Выберите тему</option>
-          <option value="product">Заказ товара</option>
-          <option value="consultation">Консультация</option>
-          <option value="delivery">Доставка</option>
-        </select>
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-comment">Комментарий</label>
-        <textarea
-          class="order-form__textarea"
-          id="order-comment"
-          name="comment"
-          rows="4"
-          placeholder="Укажите дополнительную информацию"
-        ></textarea>
-      </div>
-
-      <div class="order-form__field order-form__field--checkbox">
-        <label>
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-name">Имя <span class="order-form__required" aria-hidden="true">*</span></label>
           <input
-            id="order-agreement"
-            name="agreement"
-            type="checkbox"
+            class="order-form__input"
+            id="order-name"
+            name="name"
+            type="text"
+            placeholder="Введите ваше имя"
+            minlength="2"
+            autocomplete="given-name"
             required
           >
-          Я согласен на обработку данных
-        </label>
-      </div>
+        </div>
 
-      <div class="order-form__actions">
-        <button class="button button--secondary" type="button" id="close-order-dialog">
-          Закрыть
-        </button>
-        <button class="button button--primary" type="submit">
-          Отправить заявку
-        </button>
-      </div>
-    </form>
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-email">E-mail <span class="order-form__required" aria-hidden="true">*</span></label>
+          <input
+            class="order-form__input"
+            id="order-email"
+            name="email"
+            type="email"
+            placeholder="example@mail.ru"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-phone">Телефон <span class="order-form__required" aria-hidden="true">*</span></label>
+          <input
+            class="order-form__input"
+            id="order-phone"
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            placeholder="+7 (900) 000-00-00"
+            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+            aria-describedby="order-phone-hint"
+            required
+          >
+          <small class="order-form__hint" id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-date">Дата доставки</label>
+          <input
+            class="order-form__input"
+            id="order-date"
+            name="date"
+            type="date"
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-topic">Тема заявки (повод) <span class="order-form__required" aria-hidden="true">*</span></label>
+          <select class="order-form__select" id="order-topic" name="topic" required>
+            <option value="">Выберите повод</option>
+            <option value="birthday">День рождения</option>
+            <option value="wedding">Свадьба</option>
+            <option value="holiday">Праздник</option>
+            <option value="no-reason">Без повода</option>
+          </select>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-comment">Комментарий</label>
+          <textarea
+            class="order-form__textarea"
+            id="order-comment"
+            name="comment"
+            rows="3"
+            placeholder="Удобное время для звонка"
+          ></textarea>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__checkbox-label" for="order-agreement">
+            <input
+              class="order-form__checkbox"
+              id="order-agreement"
+              name="agreement"
+              type="checkbox"
+              required
+            >
+            Я согласен на обработку персональных данных
+          </label>
+        </div>
+
+        <div class="order-form__actions">
+          <button class="button button--secondary" type="button" data-close-dialog>
+            Отмена
+          </button>
+          <button class="button button--primary" type="submit">
+            Отправить заявку
+          </button>
+        </div>
+      </form>
+    </div>
   </dialog>
 
-  <p class="success-message" id="success-message" hidden>
-    Форма успешно отправлена!
+  <p class="success-message" id="success-message" role="status" hidden>
+    Спасибо! Заявка отправлена, мы свяжемся с вами в ближайшее время.
   </p>
 
+  <script src="js/main.js"></script>
 </body>
 </html>
