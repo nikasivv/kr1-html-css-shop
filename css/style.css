@@ -95,6 +95,15 @@ summary:focus-visible {
 }
 
 /*
+  Подсветка раздела, к которому перешли по якорной ссылке (ПР 5).
+*/
+section:target,
+.site-footer:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
+}
+
+/*
   Скрывает элемент визуально, но оставляет его для экранного диктора.
 */
 .visually-hidden {
@@ -730,6 +739,18 @@ summary:focus-visible {
   border-radius: 999px;
 }
 
+.product__badge--hit {
+  background-color: var(--color-hit);
+}
+
+.product__badge--new {
+  background-color: var(--color-new);
+}
+
+.product__badge--sale {
+  background-color: var(--color-danger);
+}
+
 .product__image {
   width: 100%;
   border-radius: var(--radius-lg);
@@ -758,6 +779,17 @@ summary:focus-visible {
   font-size: 28px;
   font-weight: 700;
   color: var(--color-primary);
+}
+
+.product__price--discount {
+  color: var(--color-danger);
+}
+
+.product__old-price {
+  margin-left: var(--space-sm);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-muted);
 }
 
 .product__text {

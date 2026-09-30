@@ -54,6 +54,15 @@ function showSuccessMessage() {
   }, 5000);
 }
 
+// Если пришли со страницы товара (например, order.html?product=tulips),
+// сразу выбираем этот товар в форме заявки.
+const productSelect = document.getElementById('page-product');
+const productFromUrl = new URLSearchParams(window.location.search).get('product');
+
+if (productSelect && productFromUrl) {
+  productSelect.value = productFromUrl;
+}
+
 // Проверка всех форм заявки на странице.
 const orderForms = document.querySelectorAll('.order-form');
 
